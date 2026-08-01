@@ -1,0 +1,106 @@
+name: Signaler un dysfonctionnement
+description: Le script ne se comporte pas comme documenté.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci du signalement.
+
+        > ⚠️ **Anonymisez.** Captures d'écran, exports CSV et copies de page VSA
+        > contiennent des noms de clients, des références de commande et votre
+        > identité. Remplacez-les par des valeurs fictives (`ACME Corp`,
+        > `PROJET-ALPHA`) avant de les joindre.
+        >
+        > Pour une **faille de sécurité**, n'utilisez pas ce formulaire :
+        > passez par [le signalement privé](https://github.com/erim32/addon-vsactivity-cra/security/advisories/new).
+
+  - type: checkboxes
+    id: prealables
+    attributes:
+      label: Préalables
+      options:
+        - label: J'ai lu la section « En cas de problème » du README.
+          required: true
+        - label: J'utilise la dernière version du script.
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version du script
+      description: Champ `@version` en tête du fichier, ou colonne « Version » du tableau de bord de l'extension.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: gestionnaire
+    attributes:
+      label: Gestionnaire de userscripts
+      options:
+        - Tampermonkey
+        - Violentmonkey
+        - Greasemonkey
+        - Autre
+    validations:
+      required: true
+
+  - type: input
+    id: navigateur
+    attributes:
+      label: Navigateur et version
+      placeholder: "Firefox 141, Chrome 138, Edge 138…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Comportement attendu
+    validations:
+      required: true
+
+  - type: textarea
+    id: observe
+    attributes:
+      label: Comportement observé
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Étapes de reproduction
+      placeholder: |
+        1. Ouvrir un mois vide
+        2. Cliquer sur « Appliquer au mois »
+        3. …
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Messages de la console
+      description: >
+        `F12` → onglet Console. Les messages du script sont préfixés `[CRA]`.
+        Collez-les ici — relisez-les d'abord, ils peuvent contenir des libellés de mission.
+      render: text
+
+  - type: textarea
+    id: reglages
+    attributes:
+      label: Réglages concernés
+      description: >
+        Si le problème touche la règle d'extraction, l'import ou l'export : le motif utilisé,
+        le séparateur, et un **libellé de mission anonymisé** représentatif de votre instance.
+      placeholder: |
+        Motif : \(([^)]*)\)
+        Libellé type : REF-00123 [du 01/03/26 au 30/09/26 (PROJET-ALPHA) - Assistance] : Intitulé >>> 12/30
+
+  - type: textarea
+    id: complement
+    attributes:
+      label: Complément
+      description: Tout autre élément utile (captures anonymisées, particularité de votre instance…).

@@ -1,0 +1,10 @@
+version: 2
+updates:
+  # Le projet n'a aucune dépendance applicative ; seules les actions du workflow
+  # de CI sont versionnées et méritent un suivi.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ci

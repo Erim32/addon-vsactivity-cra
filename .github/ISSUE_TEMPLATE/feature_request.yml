@@ -1,0 +1,43 @@
+name: Proposer une amélioration
+description: Suggérer une fonctionnalité ou une évolution.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de la proposition.
+
+        Le script suit quelques règles de conception non négociables, décrites dans
+        [CONTRIBUTING.md](https://github.com/erim32/addon-vsactivity-cra/blob/main/CONTRIBUTING.md) :
+        aucun appel réseau sortant, aucun enregistrement automatique, aucune écriture
+        de temps hors import explicite, aucun écrasement silencieux d'une saisie.
+
+  - type: textarea
+    id: besoin
+    attributes:
+      label: Le besoin
+      description: Quel problème concret rencontrez-vous aujourd'hui ? Décrivez la situation avant la solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposition
+    attributes:
+      label: La solution envisagée
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considérées
+      description: Y a-t-il un contournement avec les réglages existants ?
+
+  - type: checkboxes
+    id: conception
+    attributes:
+      label: Compatibilité avec les règles de conception
+      options:
+        - label: Ma proposition n'implique aucun appel réseau sortant.
+        - label: Ma proposition n'implique ni enregistrement ni soumission automatique dans VSA.
+        - label: Ma proposition n'écrit aucun temps sans aperçu et confirmation explicite.

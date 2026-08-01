@@ -1,0 +1,34 @@
+# ─── Données réelles ───────────────────────────────────────────────────────────
+# Les exports du script portent le nom de l'utilisateur et les noms de clients.
+# Ils ne doivent jamais être versionnés, même par accident.
+CRA_*.csv
+
+# Capture d'une page VSA réelle (identifiants de tenant, logos d'entreprise).
+EXPORT_PAGE_WEB/
+*.htm
+*_files/
+
+# ─── Système ───────────────────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# ─── Éditeurs ──────────────────────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Divers ────────────────────────────────────────────────────────────────────
+node_modules/
+*.log
+*.bak
+*.tmp

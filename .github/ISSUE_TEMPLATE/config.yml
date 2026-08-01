@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question d'utilisation
+    url: https://github.com/erim32/addon-vsactivity-cra/discussions
+    about: Pour une question sur la configuration ou l'usage, ouvrez plutôt une discussion.
+  - name: Documentation
+    url: https://github.com/erim32/addon-vsactivity-cra#readme
+    about: La section « En cas de problème » du README couvre les cas les plus fréquents.
+  - name: Faille de sécurité
+    url: https://github.com/erim32/addon-vsactivity-cra/security/advisories/new
+    about: Signalement privé — n'ouvrez pas d'issue publique.

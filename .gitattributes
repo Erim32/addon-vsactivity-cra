@@ -1,0 +1,28 @@
+# Normalisation par défaut : LF dans le dépôt, LF à la sortie.
+# Explicite plutôt qu'implicite, pour que le rendu ne dépende pas du réglage
+# core.autocrlf de chaque poste.
+* text=auto eol=lf
+
+# Le userscript est servi tel quel par raw.githubusercontent.com et lu par
+# Tampermonkey : on impose LF pour que le fichier livré soit identique partout.
+*.user.js text eol=lf
+
+*.md        text eol=lf
+*.yml       text eol=lf
+*.mjs       text eol=lf
+
+# Le CSV d'exemple documente le format produit à l'export : CRLF + BOM UTF-8,
+# conformément à la RFC 4180 et aux attentes d'Excel. Le convertir en LF le
+# rendrait non représentatif.
+*.csv text eol=crlf
+
+# Fichiers binaires éventuels (captures d'écran).
+*.png binary
+*.jpg binary
+*.gif binary
+*.webp binary
+
+# Absent des archives de release.
+/.github export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
